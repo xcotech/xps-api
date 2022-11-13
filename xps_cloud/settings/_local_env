@@ -1,0 +1,8 @@
+DEBUG=True
+
+DATABASE_URL='postgres://postgres:postgres@db/xps'
+SLAVE1_URL='postgres://postgres:postgres@db/xps'
+SLAVE2_URL='postgres://postgres:postgres@db/xps'
+
+REDIS_MASTER_HOST='localhost'
+REDIS_SLAVE_HOST='localhost'

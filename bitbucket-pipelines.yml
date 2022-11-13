@@ -1,0 +1,23 @@
+# Docker image
+image: python:3.6
+
+pipelines:
+    default:
+        - step:
+            caches:
+                - pip
+            script:
+                - pip install pipenv
+                - pipenv install --dev
+                - pipenv run pytest xps_cloud apps -v --ds=xps_cloud.settings.bitbucket
+            services:
+                - postgres
+
+definitions:
+    services:
+        postgres:
+            image: postgres
+            environment:
+                POSTGRES_DB: xps_cloud_test
+                POSTGRES_USER: postgres
+                POSTGRES_PASSWORD: postgres

@@ -1,0 +1,23 @@
+#!/bin/bash
+# deploy without maintenance mode
+# options: 
+# ---> environment: staging or prod
+# ---> instance id: deploy to a given instance only
+ENVIRONMENT=$1
+PARAMS=$2
+if [[ -z $ENVIRONMENT ]]
+	then
+		echo "We at least need environment (prod/staging)"
+else
+	if [[ $ENVIRONMENT = "staging" ]] || [[ $ENVIRONMENT = "prod" ]]
+		then
+			if [[ -z $PARAMS ]]
+			then
+				fab $ENVIRONMENT deploy
+			else
+				fab $ENVIRONMENT $PARAMS deploy
+			fi	
+	else
+		echo "Not a valid environment parameter"
+	fi
+fi

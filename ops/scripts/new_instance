@@ -1,0 +1,26 @@
+#!/bin/bash
+# create a new instance (from AMI)
+# options: 
+# ---> environment: staging or prod
+# ---> server type: io or app
+ENVIRONMENT=$1
+INSTANCE_TYPE=$2
+SUBNET_ZONE=$3
+
+if [[ -z $ENVIRONMENT ]]
+	then
+		echo "We need environment and instance_type options"
+else
+	if [[ $ENVIRONMENT = "staging" ]] || [[ $ENVIRONMENT = "prod" ]]
+		then
+			if [[ -z $INSTANCE_TYPE ]]
+			then
+				echo 'Error: need a server type'
+			else
+				# if [[ -z $SUBNET_ZONE ]]
+				fab $ENVIRONMENT add_new_instance:instance_type=$INSTANCE_TYPE,subnet_zone=$SUBNET_ZONE
+			fi	
+	else
+		echo "Not a valid environment parameter"
+	fi
+fi

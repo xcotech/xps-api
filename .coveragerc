@@ -1,0 +1,9 @@
+[html]
+directory = coverage
+
+[report]
+omit =
+    */__init__.py 
+    */apps.py 
+    */tests/*
+    */migrations/*

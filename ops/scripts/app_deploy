@@ -1,0 +1,26 @@
+#!/bin/bash
+# deploy add-on apps
+ENVIRONMENT=$1
+APP_NAME=$2
+BRANCH=$3
+if [[ -z $ENVIRONMENT ]]
+	then
+		echo "We need an environment variable (prod/staging)"
+else
+	if [[ -z $APP_NAME ]]
+	then
+		echo 'Please provide an app name'
+	else
+		echo 'Deploying the following app : ($APP_NAME)'		
+
+		if [[ -z $BRANCH ]]
+		then
+			echo 'No branch for you!'
+			fab $ENVIRONMENT app_deploy:app_name=$APP_NAME
+		else
+			echo '-- branch: ($BRANCH)'
+			echo $BRANCH
+			fab $ENVIRONMENT app_deploy:app_name=$APP_NAME,branch=$BRANCH
+		fi	
+	fi
+fi

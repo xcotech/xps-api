@@ -1,0 +1,44 @@
+{
+	"DEBUG": "False",
+	"LOG_STORAGE": "/home/xco/logs/",
+	"SERVER_STATUS": "1",
+	"SITE_URL": "https://xps.xco.io",
+	"ALLOWED_HOSTS": "xps.xco.io",
+	"REDIS_MASTER_HOST": "localhost",
+	"REDIS_SLAVE_HOST": "localhost",
+	"AWS_ACCESS_KEY_ID": "AKIAJTQ6TL5OUYKA6WLQ",
+	"AWS_SECRET_ACCESS_KEY": "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",
+	"APP_INSTANCES": "localhost",
+	"DATABASES": {
+	    "default": {
+	        "NAME": "xps_sport",
+	        "ENGINE": "django.db.backends.postgresql",
+	        "USER": "xco",
+	        "PASSWORD": "7987scibb",
+	        "HOST": "172.32.23.243",
+	        "PORT": 5433,
+	        "CONN_MAX_AGE": 120,
+	        "DISABLE_SERVER_SIDE_CURSORS": "True"
+	    },
+	    "master": {
+	        "NAME": "xps_sport",
+	        "ENGINE": "django.db.backends.postgresql",
+	        "USER": "xco",
+	        "PASSWORD": "7987scibb",
+	        "HOST": "172.32.23.243",
+	        "PORT": 5433,
+	        "CONN_MAX_AGE": 120,
+	        "DISABLE_SERVER_SIDE_CURSORS": "True"
+	    },
+	    "slave1": {
+	        "NAME": "xps_sport",
+	        "ENGINE": "django.db.backends.postgresql",
+	        "USER": "xco",
+	        "PASSWORD": "7987scibb",
+	        "HOST": "172.32.23.243",
+	        "PORT": 5433,
+	        "CONN_MAX_AGE": 120,
+	        "DISABLE_SERVER_SIDE_CURSORS": "True"
+	    }
+	}	
+}

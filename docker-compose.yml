@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+  redis_db:
+    image: redis:latest
+  web:
+    build: .
+    # command: pipenv run python manage.py runserver 0.0.0.0:8000
+    command: tail -f /dev/null
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    links:
+      - redis_db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

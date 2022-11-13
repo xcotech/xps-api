@@ -1,0 +1,33 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+django-model-utils = "*"
+cloudinary = "*"
+django-environ = "*"
+"psycopg2-binary" = "*"
+djangorestframework-jwt = "*"
+django-filter = "*"
+django-cors-headers = "*"
+django-multidb-router = "*"
+hashids = "*"
+numpy = "*"
+scipy = "*"
+zappa = "*"
+django-storages = "*"
+boto3 = "*"
+redis = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-django = "*"
+pytest-cov = "*"
+factory-boy = "*"
+mock = "*"
+
+[requires]
+python_version = "3.6"
